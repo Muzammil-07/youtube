@@ -7,7 +7,7 @@ const Cards = (props) => {
    const router = useRouter()
     return (
         <div key={props.index} className='h-[280px] w-[380px] flex  flex-col items-center bg-slate-600 bg-opacity-50 rounded-md  gap-2 shadow-xl '>
-            <button onClick={()=>{router.push({pathname:"/components/Product" ,query:{id:props.videoId}})}}>
+            <button onClick={()=>{router.push({pathname:"/components/Product" ,query:{id:props.videoId,title:props.title}})}}>
             <Image alt='img' src={props.thumbnail} width={450} height={200} className='object-fill rounded-md object-top' />
             </button>
             <div className='flex justify-evenly items-center w-full mt-1'>
