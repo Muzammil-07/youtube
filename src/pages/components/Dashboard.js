@@ -1,24 +1,35 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import Cards from './Cards';
-
-
+import {hasCookie ,getCookie} from 'cookies-next'
+import { useRouter } from 'next/router';
 
 
 
 
 const Dashboard = (props) => {
+    const router =useRouter();
     const [state, setState] = useState(false);
     const [product, setProduct] = useState([])
     const [ view ,setView ]=useState(<div>Hello World</div>)
-    
+   var a= hasCookie('relatedVideo');
+   console.log(router.query.search)
+
+    // console.log(a,"has")
     var relate='7ghhRHRP6t4'
+    
+    if (a){
+      let b = getCookie('relatedVideo')
+    //   console.log(b)
+      relate=b
+    }
     var arr = [];
     console.log(props.related,"change")
     useEffect(() => {
         let unsub = true;
         if (unsub) {
-            if(props.related){
+           
+           if(props.related ){
                 relate=props.related;
             }
             const getData = async () => {
@@ -46,7 +57,7 @@ const Dashboard = (props) => {
 
 
 
-                    console.log(arr, 'ar')
+                    // console.log(arr, 'ar')
 
                     setState(true);
                     setView(<div className='flex flex-wrap gap-2 '>
@@ -69,7 +80,7 @@ const Dashboard = (props) => {
         return () => unsub = false
 
 
-    }, [props])
+    }, [props,router.query.search])
     // console.log(data)
 
     if (!state) {
@@ -78,7 +89,7 @@ const Dashboard = (props) => {
     }
     return (
 
-        <div className='p-0'>
+        <div className='p-0 ' >
          
               {
                view

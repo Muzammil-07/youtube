@@ -6,7 +6,7 @@ function SearchCard(props) {
     // console.log(props)
     const router = useRouter();
   return (
-    <div className='h-[300px] border border-spacing-3 border-black flex items-center  '>
+    <div className='h-[300px] border border-spacing-3 border-black bg-black flex items-center  '>
         <div className=' h-[190px] w-[350px]  ml-7 rounded-xl object-cover flex justify-center overflow-clip items-center'>
         <button onClick={()=>{router.push({pathname:"/components/Product" ,query:{id:props.videoId}})}}>
           <Image loading='lazy' src={props.thumbnail} alt='logo' height={200} width={350} />

@@ -8,7 +8,7 @@ const Navbar = () => {
     const router =useRouter();
     const [search,setSearch]=useState('')
     return (
-        <div className='grid grid-cols-[1fr_3fr_1fr] grid-rows-[60px] w-full fixed top-0 '>
+        <div className='grid grid-cols-[1fr_3fr_1fr] grid-rows-[70px] w-full fixed top-0  z-1' style={{backgroundColor:'rgba(255,0,0)'}}>
             <div className=' w-full flex justify-around align-middle'>
                 <div className='p-4 '>
                     <button className='btn hover:text-purple-400'>

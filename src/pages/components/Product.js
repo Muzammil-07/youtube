@@ -29,8 +29,8 @@ const Product = () => {
               <div><button className='btn bg-slate-950 w-[80px] h-[40px] rounded-xl text-white'>Subscribe</button></div>
             </div>
           </div>
-          <div className='px-20 pt-8 w-96'>
-         <Comments/>
+          <div className='px-20 pt-8 '>
+         <Comments related={router.query.id}/>
          </div>
         </div>
       </div>

@@ -8,7 +8,7 @@ const Layout = ({children}) => {
   // console.log(router)
   useEffect(()=>{
     setRoute(false)
-        if (router.pathname == "/components/Product")
+        if (router.pathname == "/components/Product"  )
         {
        setRoute(true)
         }
@@ -16,10 +16,11 @@ const Layout = ({children}) => {
       },[{router}])
   return (
     <div className=''>
-    <Navbar/>
-
      {route?<></>:<Sidebar/>} 
+    <Navbar/>
+     <div className='text-white' >
     {children}
+    </div>
     </div>
   )
 }

@@ -3,6 +3,8 @@ import { useRouter } from 'next/router'
 import SearchCard from './SearchCard';
 import axios from 'axios';
 import { useState,useEffect } from 'react';
+import {setCookie} from 'cookies-next'
+
 const Search = () => {
     const router = useRouter();
     var item = router.query.search;
@@ -12,10 +14,13 @@ const Search = () => {
     const [view, setView] = useState(<div>Hello World</div>)
 
     var arr = [];
+   
 
     useEffect(() => {
         let unsub = true;
         if (unsub) {
+        
+   
             const getData = async () => {
 
                 const options = {
@@ -40,7 +45,7 @@ const Search = () => {
                     // console.log(response.data);
                     arr = response.data.items;
 
-
+                    setCookie('relatedVideo',arr[0].id.videoId)
 
                     console.log(arr, 'ar')
 
@@ -69,13 +74,12 @@ const Search = () => {
     }, [router.query])
 
     return (
-        <div className='grid grid-cols-[80px_1fr] grid-rows-[80px_1fr]' >
-            <div className='col-span-2 bg-slate-100 h-[100vh]'>
+        <div className='grid grid-cols-[180px_1fr] grid-rows-[80px_1fr]' >
+            <div className='col-span-2  h-[100vh]'>
 
             </div>
             <div className='col-span-1 row-span-1'></div>
             <div className='col-span-1 row-span-1 p-4'>
-                {/* <SearchCard /> */}
                 {view}
             </div>
         </div>
