@@ -17,7 +17,7 @@ const Cards = (props) => {
                 <button className='bg-black rounded-full text-white' >
                 <div className=' h-[40px] w-[40px] mt-2   text-center text-lg'>
                    
-                    {props.channelTitle.toString().charAt(1)}
+                    channel
                 </div>
                 </button>
                 <p className=' w-72 text-sm text-justify p-2 '>{props.title}</p>
