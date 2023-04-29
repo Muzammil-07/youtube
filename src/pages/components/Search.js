@@ -4,6 +4,7 @@ import SearchCard from './SearchCard';
 import axios from 'axios';
 import { useState,useEffect } from 'react';
 import {setCookie} from 'cookies-next'
+import { ClipLoader } from 'react-spinners';
 
 const Search = () => {
     const router = useRouter();
@@ -11,7 +12,9 @@ const Search = () => {
     // console.log(router.query.search)
     const [state, setState] = useState(false);
     const [product, setProduct] = useState([])
-    const [view, setView] = useState(<div>Hello World</div>)
+    const [view, setView] = useState(<div className='flex justify-center items-center'><ClipLoader loading={true} size={150}
+    aria-label="Loading Spinner"
+    data-testid="loader" /></div>)
 
     var arr = [];
    

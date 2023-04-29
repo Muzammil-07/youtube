@@ -4,10 +4,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 const Cards = (props) => {
     // console.log(props.thumbnail)
-   const {channelTitle}=props
-     let a= channelTitle.toString();
- 
-   let text= a.charAt(1)
+   
 
      
    const router = useRouter()
@@ -20,7 +17,7 @@ const Cards = (props) => {
                 <button className='bg-black rounded-full text-white' >
                 <div className=' h-[40px] w-[40px] mt-2   text-center text-lg'>
                    
-                    {text}
+                    {props.channelTitle.toString().charAt(1)}
                 </div>
                 </button>
                 <p className=' w-72 text-sm text-justify p-2 '>{props.title}</p>

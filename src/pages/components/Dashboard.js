@@ -27,7 +27,7 @@ const Dashboard = (props) => {
         relate = b
     }
     var arr = [];
-    console.log(props.related, "change")
+    // console.log(props.related, "change")
     useEffect(() => {
         let unsub = true;
         if (unsub) {
@@ -60,7 +60,7 @@ const Dashboard = (props) => {
 
 
 
-                    console.log(arr, 'ar')
+                    // console.log(arr, 'ar')
 
                     setState(true);
                     setView(<div className='flex justify-center flex-wrap gap-2 '>
