@@ -10,7 +10,7 @@ const Comments = (props) => {
   
   var relate='7ghhRHRP6t4'
   var arr = [];
-  console.log(props.related,"change")
+  // console.log(props.related,"change")
   useEffect(() => {
       let unsub = true;
       if (unsub) {
@@ -41,7 +41,7 @@ const Comments = (props) => {
 
 
 
-                  console.log(arr, 'ar')
+                  // console.log(arr, 'ar')
 
                   setState(true);
                   setView(<div className='flex flex-col gap-2'>
@@ -75,7 +75,7 @@ const Comments = (props) => {
 
 
   return (
-    <div className='w-full'>
+    <div className='w-full hidden md:block'>
       <div>
         <label>Add Comments</label>
         <input type='text' className='bg-transparent border-b-4 border-black w-96 p-2  '/>

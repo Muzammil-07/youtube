@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 const Layout = ({children}) => {
   const [route,setRoute]=useState(false)
   const router = useRouter();
-  // console.log(router)
+ 
   useEffect(()=>{
     setRoute(false)
         if (router.pathname == "/components/Product"  )
@@ -15,7 +15,7 @@ const Layout = ({children}) => {
   
       },[{router}])
   return (
-    <div className=''>
+    <div>
      {route?<></>:<Sidebar/>} 
     <Navbar/>
      <div className='text-white' >

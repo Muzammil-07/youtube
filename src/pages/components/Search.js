@@ -8,7 +8,7 @@ import {setCookie} from 'cookies-next'
 const Search = () => {
     const router = useRouter();
     var item = router.query.search;
-    console.log(router.query.search)
+    // console.log(router.query.search)
     const [state, setState] = useState(false);
     const [product, setProduct] = useState([])
     const [view, setView] = useState(<div>Hello World</div>)
@@ -47,10 +47,10 @@ const Search = () => {
 
                     setCookie('relatedVideo',arr[0].id.videoId)
 
-                    console.log(arr, 'ar')
+                    // console.log(arr, 'ar')
 
                     setState(true);
-                    setView(<div className='flex flex-col '>
+                    setView(<div className='flex flex-col gap-2 '>
                         {arr.map((doc, index) => {
                             return (
 

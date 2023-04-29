@@ -10,8 +10,8 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
  
-      <div className=" grid  grid-cols-[1fr_7fr] mt-20 ">
-        <div className='col-span-1 h-72  '>
+      <div className=" grid md-grid-cols-1 md:grid-cols-[1fr_7fr] mt-20 ">
+        <div className=' hidden md:block col-span-1 h-72  '>
       
         </div>
         <div className='col-span-1 '>

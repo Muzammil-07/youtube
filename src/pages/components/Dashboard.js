@@ -1,36 +1,39 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import Cards from './Cards';
-import {hasCookie ,getCookie} from 'cookies-next'
+import { hasCookie, getCookie } from 'cookies-next'
 import { useRouter } from 'next/router';
+import ClipLoader from "react-spinners/ClipLoader";
 
 
 
 
 const Dashboard = (props) => {
-    const router =useRouter();
+    const router = useRouter();
     const [state, setState] = useState(false);
     const [product, setProduct] = useState([])
-    const [ view ,setView ]=useState(<div>Hello World</div>)
-   var a= hasCookie('relatedVideo');
-   console.log(router.query.search)
+    const [view, setView] = useState(<div className='flex justify-center items-center'><ClipLoader loading={true} size={150}
+        aria-label="Loading Spinner"
+        data-testid="loader" /></div>)
+    var a = hasCookie('relatedVideo');
+    //    console.log(router.query.search)
 
     // console.log(a,"has")
-    var relate='7ghhRHRP6t4'
-    
-    if (a){
-      let b = getCookie('relatedVideo')
-    //   console.log(b)
-      relate=b
+    var relate = '7ghhRHRP6t4'
+
+    if (a) {
+        let b = getCookie('relatedVideo')
+        //   console.log(b)
+        relate = b
     }
     var arr = [];
-    console.log(props.related,"change")
+    console.log(props.related, "change")
     useEffect(() => {
         let unsub = true;
         if (unsub) {
-           
-           if(props.related ){
-                relate=props.related;
+
+            if (props.related) {
+                relate = props.related;
             }
             const getData = async () => {
 
@@ -57,16 +60,17 @@ const Dashboard = (props) => {
 
 
 
-                    // console.log(arr, 'ar')
+                    console.log(arr, 'ar')
 
                     setState(true);
-                    setView(<div className='flex flex-wrap gap-2 '>
-                        {arr.map((doc,index)=>{
-                            return(
-                               
-                       <Cards key={index} thumbnail={doc.snippet.thumbnails.medium.url} title={doc.snippet.title} videoId={doc.id.videoId}/>
-                     
-                       )
+                    setView(<div className='flex justify-center flex-wrap gap-2 '>
+                        {arr.map((doc, index) => {
+                            return (
+
+                                <Cards key={index} thumbnail={doc.snippet.thumbnails.medium.url} title={doc.snippet.title} videoId={doc.id.videoId}
+                                    channelTitle={doc.snippet.channelTitle} channelId={doc.snippet.channelId} />
+
+                            )
                         })}
                     </div>)
 
@@ -80,7 +84,7 @@ const Dashboard = (props) => {
         return () => unsub = false
 
 
-    }, [props,router.query.search])
+    }, [props, router.query.search])
     // console.log(data)
 
     if (!state) {
@@ -90,10 +94,10 @@ const Dashboard = (props) => {
     return (
 
         <div className='p-0 ' >
-         
-              {
-               view
-              }
+
+            {
+                view
+            }
         </div>
     )
 }

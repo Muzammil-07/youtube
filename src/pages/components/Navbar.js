@@ -1,37 +1,37 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
-import logo from '../../images/logo.png'
+import logo from '../../images/logo1.png'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 const Navbar = () => {
-    const router =useRouter();
-    const [search,setSearch]=useState('')
+    const router = useRouter();
+    const [search, setSearch] = useState('')
     return (
-        <div className='grid grid-cols-[1fr_3fr_1fr] grid-rows-[70px] w-full fixed top-0  z-1' style={{backgroundColor:'rgba(255,0,0)'}}>
-            <div className=' w-full flex justify-around align-middle'>
-                <div className='p-4 '>
+        <div className='grid grid-cols-[1fr_3fr_1fr] grid-rows-[70px] md:grid-rows-[70px] w-full fixed top-0  z-1 bg-white bg-opacity-25' >
+            <div className=' w-full flex justify-around align-middle '>
+                {/* <div className='p-4 '>
                     <button className='btn hover:text-purple-400'>
                         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" className="bi bi-stack" viewBox="0 0 16 16">
                             <path d="m14.12 10.163 1.715.858c.22.11.22.424 0 .534L8.267 15.34a.598.598 0 0 1-.534 0L.165 11.555a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0l5.317-2.66zM7.733.063a.598.598 0 0 1 .534 0l7.568 3.784a.3.3 0 0 1 0 .535L8.267 8.165a.598.598 0 0 1-.534 0L.165 4.382a.299.299 0 0 1 0-.535L7.733.063z" />
                             <path d="m14.12 6.576 1.715.858c.22.11.22.424 0 .534l-7.568 3.784a.598.598 0 0 1-.534 0L.165 7.968a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0l5.317-2.659z" />
-                        
+
                         </svg>
                     </button>
-                </div>
-                <div className='p-4' >
+                </div> */}
+                <div className='p-4  w-[120px]  md:w-[250px]'  >
                     <Link href='/'>
-                    <Image className='object-contain' src={logo} alt='logo' height={80} width={120} />
+                        <Image className='object-contain' src={logo} alt='logo' height={80} width={120} />
                     </Link>
                 </div>
             </div>
             <div className='p-4 flex justify-center'>
-                <input type='text' className='w-96 h-[40px] rounded-s-2xl text-center' onChange={(e)=>{setSearch(e.target.value) }} />
-                <button className='btn bg-slate-100 h-[40px] w-24 rounded-e-2xl ' onClick={()=>{ router.push({pathname:"/components/Search",query:{search}})}}>
+                <input type='text' className=' w-[150px] md:w-96 h-[40px] rounded-s-2xl text-center' onChange={(e) => { setSearch(e.target.value) }} />
+                <button className='btn text-black bg-slate-100 h-[40px] w-24 rounded-e-2xl ' onClick={() => { router.push({ pathname: "/components/Search", query: { search } }) }}>
                     Search
                 </button>
             </div>
-            <div className='p-4 flex justify-evenly'>
+            <div className='hidden p-4 md:flex justify-evenly'>
                 <abbr title='create' >
                     <button>
                         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" className="bi bi-plus-square-dotted" viewBox="0 0 16 16">
@@ -47,8 +47,8 @@ const Navbar = () => {
                     </button>
                 </abbr>
                 <button className='bg-slate-400 w-[40px] h-[40px] rounded-full -mt-2'>
-                      M
-                    </button>
+                    M
+                </button>
             </div>
 
 

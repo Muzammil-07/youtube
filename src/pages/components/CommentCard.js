@@ -4,7 +4,7 @@ import logo from '../../images/logo.png'
 const CommentCard = (props) => {
     const {key ,title,channel,url,likes}=props
   return (
-    <div key={key} className=' h-[200px]  grid  grid-cols-[100px_1fr] grid-rows-[1fr_3fr_1fr_1fr] bg-opacity-50 bg-slate-50 rounded-es-3xl rounded-se-3xl '>
+    <div key={key} className=' h-[200px]  grid  grid-cols-[100px_1fr] grid-rows-[1fr_3fr_1fr_1fr] bg-opacity-25 bg-slate-50 rounded-es-3xl rounded-se-3xl '>
      <div className=' row-span-4 col-span-1 p-4  '>
         <div className='bg-black h-[80px] w-[80px] flex justify-center items-center rounded-full object-contain overflow-hidden'>
         <Image src={url} alt='logo' height={100} width={100} />
