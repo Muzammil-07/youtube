@@ -19,15 +19,15 @@ const Navbar = () => {
                         </svg>
                     </button>
                 </div> */}
-                <div className='p-4  w-[120px]  md:w-[250px] transition-all hover:translate-x-7 '  >
+                <div className='p-4  w-[120px]  md:w-[250px] transition-all hover:translate-x-7 md:hover:translate-x-0 '  >
                     <Link href='/'>
                         <Image className='object-contain ' src={logo} alt='logo' height={80} width={120} />
                     </Link>
                 </div>
             </div>
-            <div className='p-4 flex justify-center'>
-                <input type='text' placeholder='Search Something' className=' w-[150px] md:w-96 h-[40px] rounded-s-2xl text-center' onChange={(e) => { setSearch(e.target.value) }} />
-                <button className='btn  hover:shadow-md hover:shadow-white hover:font-bold bg-black text-white h-[40px] w-24 rounded-e-2xl ' onClick={() => { router.push({ pathname: "/components/Search", query: { search } }) }}>
+            <div className='p-4 flex justify-center text-black'>
+                <input type='text' placeholder='Search Something' className=' w-[120px] md:w-96 h-[40px] rounded-s-2xl text-center' onChange={(e) => { setSearch(e.target.value) }} />
+                <button className='btn  hover:shadow-md hover:shadow-white hover:font-bold bg-black text-white h-[40px] w-[60px] md:w-24  rounded-e-2xl ' onClick={() => { router.push({ pathname: "/components/Search", query: { search } }) }}>
                     Search
                 </button>
             </div>

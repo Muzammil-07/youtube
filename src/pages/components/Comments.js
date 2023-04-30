@@ -51,7 +51,7 @@ const Comments = (props) => {
                         }
                           return(
                              
-                     <CommentCard key={index} title={doc.snippet.topLevelComment.snippet.textDisplay} 
+                     <CommentCard key={index} keys={index} title={doc.snippet.topLevelComment.snippet.textDisplay} 
                      channel={doc.snippet.topLevelComment.snippet.authorDisplayName}
                      url={doc.snippet.topLevelComment.snippet.authorProfileImageUrl}
                      likes={doc.snippet.topLevelComment.snippet.likeCount}/>

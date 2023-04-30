@@ -15,7 +15,7 @@ const Layout = ({children}) => {
   
       },[{router}])
   return (
-    <div>
+    <div className='w-full  '>
      {route?<></>:<Sidebar/>} 
     <Navbar/>
      <div className='text-white' >

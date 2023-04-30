@@ -53,11 +53,14 @@ const Search = () => {
                     // console.log(arr, 'ar')
 
                     setState(true);
-                    setView(<div className='flex flex-col gap-2 '>
+                    setView(<div className='flex flex-col gap-2  justify-center items-center'>
                         {arr.map((doc, index) => {
+                            var a= doc.snippet.title;
+                    let b= a.slice(0,25)
+                            
                             return (
 
-                                <SearchCard key={index} thumbnail={doc.snippet.thumbnails.medium.url} title={doc.snippet.title} videoId={doc.id.videoId}
+                                <SearchCard key={index} thumbnail={doc.snippet.thumbnails.medium.url} title={b} videoId={doc.id.videoId}
                                 channelTitle={doc.snippet.channelTitle} description={doc.snippet.description} />
 
                             )
@@ -77,12 +80,12 @@ const Search = () => {
     }, [router.query])
 
     return (
-        <div className='grid grid-cols-[180px_1fr] grid-rows-[80px_1fr]' >
-            <div className='col-span-2  h-[100vh]'>
+        <div className='grid grid-cols-[1fr]  mt-20 md:mt-0 md:grid-cols-[180px_1fr] grid-rows-[1fr] md:grid-rows-[80px_1fr]' >
+            <div className='col-span-2 hidden md:block'>
 
             </div>
-            <div className='col-span-1 row-span-1'></div>
-            <div className='col-span-1 row-span-1 p-4'>
+            <div className='col-span-1 row-span-1 hidden md:block'></div>
+            <div className='p-1 md:p-4  '>
                 {view}
             </div>
         </div>
