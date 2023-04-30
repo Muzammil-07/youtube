@@ -67,7 +67,7 @@ const Dashboard = (props) => {
                         {arr.map((doc, index) => {
                             return (
 
-                                <Cards key={index} thumbnail={doc.snippet.thumbnails.medium.url} title={doc.snippet.title} videoId={doc.id.videoId}
+                                <Cards key={index} keys={index} thumbnail={doc.snippet.thumbnails.medium.url} title={doc.snippet.title} videoId={doc.id.videoId}
                                     channelTitle={doc.snippet.channelTitle} channelId={doc.snippet.channelId} />
 
                             )
