@@ -56,11 +56,11 @@ const Search = () => {
                     setView(<div className='flex flex-col gap-2  justify-center items-center'>
                         {arr.map((doc, index) => {
                             var a= doc.snippet.title;
-                    let b= a.slice(0,25)
+                   
                             
                             return (
 
-                                <SearchCard key={index} thumbnail={doc.snippet.thumbnails.medium.url} title={b} videoId={doc.id.videoId}
+                                <SearchCard key={index} thumbnail={doc.snippet.thumbnails.medium.url} title={a} videoId={doc.id.videoId}
                                 channelTitle={doc.snippet.channelTitle} description={doc.snippet.description} />
 
                             )

@@ -60,7 +60,7 @@ const Dashboard = (props) => {
 
 
 
-                    // console.log(arr, 'ar')
+                    console.log(arr, 'ar')
 
                     setState(true);
                     setView(<div className='flex justify-center flex-wrap gap-2 '>
