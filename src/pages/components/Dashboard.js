@@ -89,7 +89,10 @@ const Dashboard = (props) => {
 
     if (!state) {
         return (
-            <div>Hello</div>)
+        <div className='flex justify-center items-center'><ClipLoader loading={true} size={150}
+            aria-label="Loading Spinner"
+            data-testid="loader" /></div>
+            )
     }
     return (
 
